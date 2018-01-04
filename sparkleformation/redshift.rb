@@ -47,6 +47,12 @@ SparkleFormation.new(:redshift, provider: :aws).load(:base).overrides do
       enable_dns_support "false"
       enable_dns_hostnames "false"
       instance_tenancy "default"
+      tags _array(
+        -> {
+          key "Name"
+          value "mnd-development"
+        }
+      )
     end
   end
 
